@@ -10,4 +10,8 @@ res.render('index', {
 })
 })
 
+const useRouter = require('./routes/users')
+
+app.use('/users', useRouter)
+
 app.listen(3000)
