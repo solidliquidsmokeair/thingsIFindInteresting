@@ -25,4 +25,13 @@ router
     res.send(`this is user ${req.params.id}`)
     }))
 
+
+const users = [{ name: "linda"}, {name: "sally"}]
+
+router.param("id", (req, res, next, id) => {
+    req.user = users[id]
+    console.log(req.user)
+    next()
+})
+
 module.exports = router
